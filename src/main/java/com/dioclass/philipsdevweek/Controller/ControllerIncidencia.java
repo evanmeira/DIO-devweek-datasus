@@ -19,8 +19,8 @@ public class ControllerIncidencia {
         this.incidenciaRepo = incidenciaRepo;
     }
 
-    @GetMapping("/incindencia")
-    public List<Incidencia> getIncidiencia(){
+    @GetMapping("/incidencia")
+    public List<Incidencia> getIncidencia(){
         return this.incidenciaRepo.findAll();
     }
 

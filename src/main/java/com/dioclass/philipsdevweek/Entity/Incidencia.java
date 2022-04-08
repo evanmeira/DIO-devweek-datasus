@@ -3,6 +3,7 @@ package com.dioclass.philipsdevweek.Entity;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "incidencia_exame")
 public class Incidencia {
 
     @Id
@@ -10,7 +11,7 @@ public class Incidencia {
     @Column(nullable = false)
     private Long id;
 
-    private Integer Regiao_id;
+    private Long Regiao_id;
 
     private Integer Mes;
 
@@ -18,7 +19,7 @@ public class Incidencia {
 
     private Integer Qnt_exames;
 
-    public Incidencia(Integer regiao_id, Integer mes, Long faixa_id, Integer qnt_exames) {
+    public Incidencia(Long regiao_id, Integer mes, Long faixa_id, Integer qnt_exames) {
         Regiao_id = regiao_id;
         Mes = mes;
         Faixa_id = faixa_id;
@@ -31,11 +32,11 @@ public class Incidencia {
         return id;
     }
 
-    public Integer getRegiao_id() {
+    public Long getRegiao_id() {
         return Regiao_id;
     }
 
-    public void setRegiao_id(Integer regiao_id) {
+    public void setRegiao_id(Long regiao_id) {
         Regiao_id = regiao_id;
     }
 
