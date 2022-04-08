@@ -1,0 +1,58 @@
+<div class="margem">
+  <mat-card>
+    <mat-card-title>Incidência</mat-card-title>
+    <mat-card-subtitle>Exames de mamografia entre Junho e Julho de 2015</mat-card-subtitle>
+    <table matSort (matSortChange)="inicidencias">
+      <tr>
+        <th mat-sort-header="id">ID</th>
+        <th mat-sort-header="mes">Mês</th>
+        <th mat-sort-header="regiao_id">Região</th>
+        <th mat-sort-header="faixa_id">Faixa Etária</th>
+        <th mat-sort-header="qnt_exames">Quantidade de Exames</th>
+      </tr>
+      <tr *ngFor="let i of inicidencias">
+        <td>{{ i.id }}</td>
+        <td>{{ i.regiao?.regiao || '' }}</td>
+        <td>{{ i.mes }}</td>
+        <td>{{ i.faixaEtaria?.descricao }}</td>
+        <td>{{ i.qnt_exames }}</td>
+      </tr>
+    </table>
+  </mat-card>
+  
+  <mat-card>
+    <mat-card-title>Regiões</mat-card-title>
+    <mat-card-subtitle>Consulta de exames de mamografia</mat-card-subtitle>
+    <table matSort (matSortChange)="regioes">
+      <tr>
+        <th mat-sort-header="id">ID</th>
+        <th mat-sort-header="regiao">Região</th>
+        <th mat-sort-header="total_exames">Nº de exames</th>
+      </tr>
+      <tr *ngFor="let r of regioes">
+        <td>{{ r.id }}</td>
+        <td>{{ r.regiao }}</td>
+        <td>{{ r.total_exames }}</td>
+      </tr>
+    </table>
+  </mat-card> 
+
+  <mat-card>
+    <mat-card-title>Faixa Etárias</mat-card-title>
+    <mat-card-subtitle>Faixa etárias das mulheres que realizaram os exames</mat-card-subtitle>
+    <table matSort (matSortChange)="faixaEtarias">
+      <tr>
+        <th mat-sort-header="id">ID</th>
+        <th mat-sort-header="faixa_i">Faixa I</th>
+        <th mat-sort-header="faixa_n">Faixa N</th>
+        <th mat-sort-header="descricao">Descrição</th>
+      </tr>
+      <tr *ngFor="let f of faixaEtarias">
+        <td>{{ f.id }}</td>
+        <td>{{ f.faixa_i }}</td>
+        <td>{{ f.faixa_n }}</td>
+        <td>{{ f.descricao }}</td>        
+      </tr>
+    </table>
+  </mat-card>
+</div>
